@@ -42,7 +42,7 @@
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Choose Rule') }}</label>
                             <div class="col-md-6">
-                                <select id="inputState" class="form-control">
+                                <select id="inputState" name="role" class="form-control">
                                     <option selected disabled>Click me</option>
                                     <option value="0">Student</option>
                                     <option value="1">Instructor</option>
