@@ -198,7 +198,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/member') }}" class="nav-link">
+                        <a href="{{ url('/add-group') }}" class="nav-link">
                             <i class="fa-solid fa-user-group nav-icon"></i>
                             <p>Members</p>
                         </a>

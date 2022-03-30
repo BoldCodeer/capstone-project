@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\GroupController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +25,8 @@ Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name
 
 //Route::get('/member', [App\Http\Controllers\HomeController::class, 'member'])->name('member');
 
-Route::view('member', 'student.member');
+//Route::view('member', 'student.groupCreate');
 Route::view('home', 'home');
+
+Route::get('add-group', [GroupController::class, 'create'])->name('student.createGroup');
+Route::post('add-group', [GroupController::class, 'store']);

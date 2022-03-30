@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Create Member</h1>
+                <h1 class="m-0">Create Team</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -20,11 +20,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <form action="member" method="POST">
+                @if (session('status'))
+                    <h6 class="alert alert-success">{{ session('status') }}</h6>
+                @endif
+                <form action="{{ url('add-group') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="inputEmail4">Team Name</label>
-                        <input type="text" class="form-control" name="teamLeader">
+                        <input type="text" class="form-control" name="teamName">
                         <label for="inputEmail4">Team Leader</label>
                         <input type="text" class="form-control" name="teamLeader">
 
@@ -36,7 +39,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Section</label>
-                            <input type="email" class="form-control" name="section">
+                            <input type="text" class="form-control" name="section">
                         </div>
                     </div>
                     <div class="form-row">
@@ -53,21 +56,27 @@
                             <input type="text" class="form-control" name="mI1">
                         </div>
                         <div class="form-group col-md-4">
+                            <label for="LastName">Last Name</label>
                             <input type="text" class="form-control" name="lastName2">
                         </div>
                         <div class="form-group col-md-4">
+                            <label for="inputAddress">First Name</label>
                             <input type="text" class="form-control" name="firstName2">
                         </div>
                         <div class="form-group col-md-4">
+                            <label for="inputAddress">MI</label>
                             <input type="text" class="form-control" name="mI2">
                         </div>
                         <div class="form-group col-md-4">
+                            <label for="LastName">Last Name</label>
                             <input type="text" class="form-control" name="lastName3">
                         </div>
                         <div class="form-group col-md-4">
+                            <label for="inputAddress">First Name</label>
                             <input type="text" class="form-control" name="firstName3">
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-4">s
+                            <label for="inputAddress">MI</label>
                             <input type="text" class="form-control" name="mI3">
                         </div>
                     </div>
@@ -79,31 +88,23 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col">Team Leader</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Section</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    @if(isset($groups))
+                        @foreach($groups as $group)
+                            <tr>
+                                <td>{{ $group->teamName }}</td>
+                                <td>{{ $group->teamLeader }}</td>
+                                <td>{{ $group->course }}</td>
+                                <td>{{ $group->section }}</td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </div>
