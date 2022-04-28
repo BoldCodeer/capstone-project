@@ -28,5 +28,8 @@ class Group extends Model
     {
         return $this->belongsTo(User::class);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
 }

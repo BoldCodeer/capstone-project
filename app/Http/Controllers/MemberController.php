@@ -39,15 +39,13 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        $members = new Member;
-        $user = Auth::user()->id;
-        $findGroupId = Group::select('id')->where('user_id', $user)->first();
-        $members->lastName = $request->input('lastName');
-        $members->firstName = $request->input('firstName');
-        $members->mi = $request->input('mi');
-        $members->group_id = $findGroupId;
-
-        $members->save();
+        $user   = Auth::user();
+        $member = new Member();
+        $member->lastName  = $request->input('lastName');
+        $member->firstName = $request->input('firstName');
+        $member->mi        = $request->input('mi');
+        $member->group_id  = $user->group->id;
+        $member->save();
         return redirect()->back()->with('status','Successfully created members');
     }
 
