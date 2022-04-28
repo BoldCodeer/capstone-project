@@ -15,4 +15,9 @@ class Member extends Model
         'lastName',
         'mi',
     ];
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
+    }
 }

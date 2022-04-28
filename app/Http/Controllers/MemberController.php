@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Group;
 use App\Models\Member;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MemberController extends Controller
 {
@@ -36,9 +40,12 @@ class MemberController extends Controller
     public function store(Request $request)
     {
         $members = new Member;
+        $user = Auth::user()->id;
+        $findGroupId = Group::select('id')->where('user_id', $user)->first();
         $members->lastName = $request->input('lastName');
         $members->firstName = $request->input('firstName');
         $members->mi = $request->input('mi');
+        $members->group_id = $findGroupId;
 
         $members->save();
         return redirect()->back()->with('status','Successfully created members');

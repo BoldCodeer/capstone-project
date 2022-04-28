@@ -205,13 +205,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($members as $member)
-                        <tr>
-                            <td>{{ $member->lastName }}</td>
-                            <td>{{ $member->firstName }}</td>
-                            <td>{{ $member->mi }}</td>
-                        </tr>
-                    @endforeach
+                    @if(isset($members))
+                        @foreach($members as $member)
+                            <tr>
+                                <td>{{ $member->lastName }}</td>
+                                <td>{{ $member->firstName }}</td>
+                                <td>{{ $member->mi }}</td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </div>

@@ -46,6 +46,7 @@ class GroupController extends Controller
         $group->mi = $request->input('mi');
         $group->course = $request->input('course');
         $group->section = $request->input('section');
+        $group->user_id = Auth::user()->id;
         $group->save();
         return redirect()->back()->with('status','Successfully created group');
     }
