@@ -23,12 +23,10 @@ class Group extends Model
     {
         return $this->hasMany(Member::class);
     }
-<<<<<<< HEAD
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-=======
->>>>>>> 63304b5c6e05264d7865d3e76492fdf239b3767f
+
 }
