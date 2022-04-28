@@ -16,7 +16,7 @@
     </div>
 @endsection
 
-@section('student-navbar')
+@section('instructor-navbar')
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
         <li class="nav-item">
@@ -28,13 +28,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/add-group') }}" class="nav-link">
-                <i class="fa-solid fa-user-group nav-icon"></i>
-                <p>Members</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ url('/room') }}" class="nav-link">
+            <a href="{{ url('/create-room') }}" class="nav-link">
                 <i class="fa-solid fa-users nav-icon" aria-hidden="true"></i>
                 <p>
                     Room
@@ -44,19 +38,25 @@
         <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="fa-solid fa-file nav-icon"></i>
-                <p>File Submission</p>
+                <p>Task</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-file nav-icon"></i>
+                <p>File List</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="fa-solid fa-star nav-icon"></i>
-                <p>Ratings</p>
+                <p>Rating</p>
             </a>
         </li>
     </ul>
 @endsection
 
-@section('main-content')
+@section('instructor-main-content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 col-6">
@@ -78,7 +78,7 @@
                 <div class="small-box bg-success">
                     <div class="inner">
                         <h3>53<sup style="font-size: 20px">%</sup></h3>
-                        <p>Room Join</p>
+                        <p>Room Created</p>
                     </div>
                     <div class="icon">
                         <i class="fa-solid fa-layer-group"></i>

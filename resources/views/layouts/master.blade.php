@@ -7,6 +7,7 @@
     <title>AdminLTE 3 | Starter</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
     <script nonce="86f0134a-637c-46ea-ab55-95b82c0ac00d">(function(w,d){!function(a,e,t,r,z){a.zarazData=a.zarazData||{},a.zarazData.executed=[],a.zarazData.tracks=[],a.zaraz={deferred:[]};var s=e.getElementsByTagName("title")[0];s&&(a.zarazData.t=e.getElementsByTagName("title")[0].text),a.zarazData.w=a.screen.width,a.zarazData.h=a.screen.height,a.zarazData.j=a.innerHeight,a.zarazData.e=a.innerWidth,a.zarazData.l=a.location.href,a.zarazData.r=e.referrer,a.zarazData.k=a.screen.colorDepth,a.zarazData.n=e.characterSet,a.zarazData.o=(new Date).getTimezoneOffset(),a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.push(e),t)a.zarazData["z_"+key]=t[key]},a.zaraz._preSet=[],a.zaraz.set=(e,t,r)=>{a.zarazData["z_"+e]=t,a.zaraz._preSet.push([e,t,r])},a.dataLayer.push({"zaraz.start":(new Date).getTime()}),a.addEventListener("DOMContentLoaded",(()=>{var t=e.getElementsByTagName(r)[0],z=e.createElement(r);z.defer=!0,z.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(a.zarazData))),t.parentNode.insertBefore(z,t)}))}(w,d,0,"script");})(window,document);</script></head>
 <body class="hold-transition sidebar-mini">
@@ -187,43 +188,8 @@
         <div class="sidebar">
 
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-                    <li class="nav-item">
-                        <a href="{{ url('/home') }}" class="nav-link">
-                            <i class="fa-solid fa-gauge-high nav-icon"></i>
-                            <p>
-                                Dashboard
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url('/add-group') }}" class="nav-link">
-                            <i class="fa-solid fa-user-group nav-icon"></i>
-                            <p>Members</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url('/room') }}" class="nav-link">
-                            <i class="fa-solid fa-users nav-icon" aria-hidden="true"></i>
-                            <p>
-                                Room
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fa-solid fa-file nav-icon"></i>
-                            <p>File Submission</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fa-solid fa-star nav-icon"></i>
-                            <p>Ratings</p>
-                        </a>
-                    </li>
-                </ul>
+                @yield('student-navbar')
+                @yield('instructor-navbar')
             </nav>
 
         </div>
@@ -239,6 +205,7 @@
 
         <div class="content">
             @yield('main-content')
+            @yield('instructor-main-content')
         </div>
 
     </div>

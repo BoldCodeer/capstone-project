@@ -16,19 +16,19 @@ return new class extends Migration
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
             $table->string('teamName');
-            $table->string('teamLeader');
+            $table->string('lastName');
+            $table->string('firstName');
+            $table->string('mi');
             $table->string('course');
             $table->string('section');
-            $table->string('lastName1');
-            $table->string('firstName1');
-            $table->string('mI1');
-            $table->string('lastName2');
-            $table->string('firstName2');
-            $table->string('mI2');
-            $table->string('lastName3');
-            $table->string('firstName3');
-            $table->string('mI3');
             $table->timestamps();
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

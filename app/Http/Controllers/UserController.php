@@ -23,7 +23,7 @@ class UserController extends Controller
 
         else {
 
-            return view('dashboard');
+            return view('home');
         }
     }
 

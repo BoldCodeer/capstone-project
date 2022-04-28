@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Group;
+use App\Models\Member;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class GroupController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //$user = Auth::user();
-        $groups = Auth::user()->groups;
-        $members = Auth::user()->members;
-        return view('student.groupCreate', compact('groups','members'));
+        //
     }
 
     /**
@@ -28,7 +24,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -39,24 +35,22 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        $group = new Group;
-        $group->teamName = $request->input('teamName');
-        $group->firstName = $request->input('firstName');
-        $group->LastName = $request->input('lastName');
-        $group->mi = $request->input('mi');
-        $group->course = $request->input('course');
-        $group->section = $request->input('section');
-        $group->save();
-        return redirect()->back()->with('status','Successfully created group');
+        $members = new Member;
+        $members->lastName = $request->input('lastName');
+        $members->firstName = $request->input('firstName');
+        $members->mi = $request->input('mi');
+
+        $members->save();
+        return redirect()->back()->with('status','Successfully created members');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group)
+    public function show(Member $member)
     {
         //
     }
@@ -64,10 +58,10 @@ class GroupController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function edit(Group $group)
+    public function edit(Member $member)
     {
         //
     }
@@ -76,10 +70,10 @@ class GroupController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Group  $group
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Group $group)
+    public function update(Request $request, Member $member)
     {
         //
     }
@@ -87,10 +81,10 @@ class GroupController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Group $group)
+    public function destroy(Member $member)
     {
         //
     }
