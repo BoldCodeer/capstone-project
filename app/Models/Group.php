@@ -18,4 +18,9 @@ class Group extends Model
         'course',
         'section',
     ];
+
+    public function members()
+    {
+        return $this->hasMany(Member::class);
+    }
 }
