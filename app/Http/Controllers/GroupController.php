@@ -15,10 +15,22 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //$user = Auth::user();
-        $groups = Auth::user()->groups;
-        $members = Auth::user()->members;
-        return view('student.groupCreate', compact('groups','members'));
+        $user = Auth::user();
+        $groups = $user->groups;
+
+        echo '<h1>USER\'S GROUPS</h1>';
+        echo '<pre>';
+        print_r($groups);
+        echo '</pre>';
+
+        echo '<h1>USER\'S GROUP MEMBERS</h1>';
+        foreach ($groups as $group) {
+            echo '<pre>';
+            print_r($group->members);
+            echo '</pre>';
+        }
+
+        // return view('student.groupCreate', compact('groups','members'));
     }
 
     /**
