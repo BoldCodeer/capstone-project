@@ -19,7 +19,7 @@ class GroupController extends Controller
         $user = Auth::user();
         $groups = $user->groups;
 
-        return view('student.groupCreate', compact('groups'));
+        return view('student.display', compact('groups'));
     }
 
     /**

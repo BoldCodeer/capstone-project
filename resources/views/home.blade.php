@@ -28,9 +28,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/add-group') }}" class="nav-link">
+            <a href="{{ route('student.display') }}" class="nav-link">
                 <i class="fa-solid fa-user-group nav-icon"></i>
-                <p>Members</p>
+                <p>Group</p>
             </a>
         </li>
         <li class="nav-item">
