@@ -17,18 +17,9 @@ class GroupController extends Controller
     public function index()
     {
         $user = Auth::user();
-        //$m = new Member;
         $groups = $user->groups;
 
-        dd($groups);
-
-        $members = Member::find(1)->members;
-
-//        foreach ($groups as $group) {
-//            $group->members;
-//        }
-
-        return view('student.groupCreate', compact('groups', 'members'));
+        return view('student.groupCreate', compact('groups'));
     }
 
     /**
