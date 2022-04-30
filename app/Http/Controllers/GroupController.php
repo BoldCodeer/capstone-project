@@ -46,6 +46,7 @@ class GroupController extends Controller
         $group->LastName = $request->input('lastName');
         $group->mi = $request->input('mi');
         $group->course = $request->input('course');
+        $group->year = $request->input('year');
         $group->section = $request->input('section');
         $group->user_id = Auth::user()->id;
         $group->save();

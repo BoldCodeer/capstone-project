@@ -50,11 +50,15 @@
                     </div>
                     <hr>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="inputEmail4">Course</label>
                             <input type="text" class="form-control" name="course">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Year</label>
+                            <input type="text" class="form-control" name="year">
+                        </div>
+                        <div class="form-group col-md-4">
                             <label for="inputEmail4">Section</label>
                             <input type="text" class="form-control" name="section">
                         </div>
@@ -72,6 +76,7 @@
                         <th scope="col">First Name</th>
                         <th scope="col">MI</th>
                         <th scope="col">Course</th>
+                        <th scope="col">Year</th>
                         <th scope="col">Section</th>
                     </tr>
                     </thead>
@@ -84,6 +89,7 @@
                                     <td>{{ $group->firstName }}</td>
                                     <td>{{ $group->mi }}</td>
                                     <td>{{ $group->course }}</td>
+                                    <td>{{ $group->year }}</td>
                                     <td>{{ $group->section }}</td>
                                 </tr>
                             @endforeach

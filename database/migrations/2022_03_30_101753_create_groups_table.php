@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('firstName');
             $table->string('mi');
             $table->string('course');
+            $table->string('year');
             $table->string('section');
             $table->timestamps();
 

@@ -22,6 +22,7 @@ class StudentGroupSeeder extends Seeder
                 'firstName'   => 'Arlene',
                 'mi'          => 'A',
                 'course'      => 'BSIT',
+                'year' => '3',
                 'section' => 'A',
                 'user_id' => '1'
             ],
@@ -31,6 +32,7 @@ class StudentGroupSeeder extends Seeder
                 'firstName'   => 'Keith Andrew',
                 'mi'          => 'L',
                 'course'      => 'BSIT',
+                'year' => '3',
                 'section' => 'A',
                 'user_id' => '1',
             ],
@@ -40,6 +42,7 @@ class StudentGroupSeeder extends Seeder
                 'firstName'   => 'Philip Andrew',
                 'mi'          => 'K',
                 'course'      => 'BSIT',
+                'year' => '3',
                 'section' => 'A',
                 'user_id' => '1',
             ],
@@ -49,6 +52,7 @@ class StudentGroupSeeder extends Seeder
                 'firstName'   => 'Glenn',
                 'mi'          => 'O',
                 'course'      => 'BSIT',
+                'year' => '3',
                 'section' => 'A',
                 'user_id' => '1',
             ]
