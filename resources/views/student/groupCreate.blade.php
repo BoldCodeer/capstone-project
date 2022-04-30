@@ -158,28 +158,6 @@
                                                     <label for="exampleFormControlInput1" class="form-label">MI</label>
                                                     <input type="text" class="form-control" id="exampleFormControlInput1" name="mi">
                                                 </div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="lastName">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="firstName">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="mi">
-                                                </div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="lastName">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="firstName">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="mi">
-                                                </div>
                                             </div>
 
 

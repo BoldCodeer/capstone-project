@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,21 +17,16 @@ class GroupController extends Controller
     public function index()
     {
         $user = Auth::user();
+        //$m = new Member;
         $groups = $user->groups;
 
-        echo '<h1>USER\'S GROUPS</h1>';
-        echo '<pre>';
-        print_r($groups);
-        echo '</pre>';
+        $members = Member::find(1)->members;
 
-        echo '<h1>USER\'S GROUP MEMBERS</h1>';
-        foreach ($groups as $group) {
-            echo '<pre>';
-            print_r($group->members);
-            echo '</pre>';
-        }
+//        foreach ($groups as $group) {
+//            $group->members;
+//        }
 
-        // return view('student.groupCreate', compact('groups','members'));
+        return view('student.groupCreate', compact('groups', 'members'));
     }
 
     /**
