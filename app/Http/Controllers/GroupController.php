@@ -20,6 +20,8 @@ class GroupController extends Controller
         //$m = new Member;
         $groups = $user->groups;
 
+        dd($groups);
+
         $members = Member::find(1)->members;
 
 //        foreach ($groups as $group) {
