@@ -72,7 +72,7 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        //
+        return view('edit');
     }
 
     /**

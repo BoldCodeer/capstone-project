@@ -34,6 +34,8 @@ Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name
 Route::get('group', [GroupController::class, 'index'])->name('student.display');
 //Route::get('add-group', [GroupController::class, 'create'])->name('student.createGroup');
 
+Route::get('group-edit', [GroupController::class, 'edit'])->name('student.edit');
+
 Route::post('add-group', [GroupController::class, 'store']);
 
 Route::post('add-members', [MemberController::class, 'store']);

@@ -64,7 +64,6 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">CREATE</button>
-                    <button type="submit" class="btn btn-secondary">EDIT</button>
                 </form>
             </div>
             <div class="col-md-6">
@@ -78,6 +77,8 @@
                         <th scope="col">Course</th>
                         <th scope="col">Year</th>
                         <th scope="col">Section</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -91,6 +92,8 @@
                                     <td>{{ $group->course }}</td>
                                     <td>{{ $group->year }}</td>
                                     <td>{{ $group->section }}</td>
+                                    <td><a href="{{ route('student.edit') }}"><i class="far fa-edit"></i></a></td>
+                                    <td><a href="#" style="color: red;"><i class="far fa-trash-alt"></i></a></td>
                                 </tr>
                             @endforeach
                         @endif
